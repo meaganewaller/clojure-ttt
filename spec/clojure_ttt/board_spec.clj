@@ -18,3 +18,11 @@
           (it "returns a new board with the updated move"
               (should= ["X" nil nil nil nil nil nil nil nil] (update-board (new-board) 0 "X"))))
 
+(describe "winner?"
+          (it "returns nil if there is no winner"
+              (should= nil (winner? "X" (new-board))))
+          (it "returns true if theres a winner"
+              (should (winner? "X" '(nil nil nil "X" "X" "X" nil nil nil))))
+          (it "returns false if the marker given isnt the winner"
+              (should-not (winner? "O" '("X" nil nil nil "X" nil nil nil nil "X")))))
+
