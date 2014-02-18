@@ -12,3 +12,9 @@
    nil nil nil
    nil nil nil])
 
+(defn update-board [board space marker]
+  (concat
+    (take space board)
+    (list marker)
+    (nthnext board (inc space))))
+

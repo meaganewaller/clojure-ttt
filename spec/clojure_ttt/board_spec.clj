@@ -13,3 +13,8 @@
               (should= 9 (count (available-spaces (new-board))))
               (should= #{0 1 2 3 4 5} (available-spaces '(nil nil nil nil nil nil "O" "X" "X")))))
 
+
+(describe "update-board"
+          (it "returns a new board with the updated move"
+              (should= ["X" nil nil nil nil nil nil nil nil] (update-board (new-board) 0 "X"))))
+
