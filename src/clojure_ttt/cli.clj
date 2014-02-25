@@ -15,23 +15,36 @@
   (str "|"
   (get-space board (+ index 2)))))
 
-(defn print-blank []
-  (println))
+(defn print-message [message]
+  (println message))
 
-(defn print-board [board]
+(defn print-board [message board]
+  (print-message message)
   (println (get-row board 0))
   (println (get-row board 3))
   (println (get-row board 6)))
 
-(defn print-message [message]
-  (println message))
+(defn print-blank []
+  (println))
 
 (defn print-game [message current-player board]
-  (print-message message)
   (print-blank)
-  (println (format "Current Player: %s" current-player))
+  (print-board (format "Current Player: %s" current-player) board)
+  (print-blank))
+
+(defn print-tied-game [board]
+  (print-board "Tied Game" board))
+
+(defn print-winner [player board]
+  (print-board (format "%s is the Winner", player) board))
+
+(defn print-end []
+  (println "Game Over!"))
+
+(defn print-setup []
   (print-blank)
-  (print-board board))
-
-
-
+  (print-blank)
+  (print-message "Welcome to Tic Tac Toe!")
+  (print-message "[0]")
+  (print-message "[1]")
+  (print-message "[2]"))

@@ -25,4 +25,4 @@
               (should (winner? "X" '(nil nil nil "X" "X" "X" nil nil nil))))
           (it "returns false if the marker given isnt the winner"
               (should-not (winner? "O" '("X" nil nil nil "X" nil nil nil nil "X")))))
-
+(run-specs)
