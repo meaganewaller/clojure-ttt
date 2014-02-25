@@ -27,7 +27,7 @@
 (defn print-blank []
   (println))
 
-(defn print-game [message current-player board]
+(defn print-game [current-player board]
   (print-blank)
   (print-board (format "Current Player: %s" current-player) board)
   (print-blank))
@@ -43,8 +43,7 @@
 
 (defn print-setup []
   (print-blank)
-  (print-blank)
   (print-message "Welcome to Tic Tac Toe!")
-  (print-message "[0]")
-  (print-message "[1]")
-  (print-message "[2]"))
+  (print-message "[1] 1 Player")
+  (print-message "[2] 2 Players")
+  (print-message "[0] Quit Game"))

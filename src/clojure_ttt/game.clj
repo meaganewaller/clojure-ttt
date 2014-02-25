@@ -24,13 +24,14 @@
 (defn print-outcome [current-player board]
   (if (tied? board)
     (print-tied-game board)
-    (print-winner current-player board)))
+    (print-winner (switch-player current-player) board)))
 
 (defn play [player new-board]
-  (loop [board new-board current-player "X"]
-    (print-game (current-player board))
+  (loop [board new-board
+         current-player "X"]
+    (print-game current-player board)
     (if (over? board)
-      (do (print-end current-player board) (print-end))
+      (do (print-outcome current-player board) (print-end))
       (recur
         (update-board board (move player board current-player) current-player)
         (switch-player current-player)))))
@@ -38,8 +39,9 @@
 (defn start-game []
   (print-setup)
   (case (get-input (range 3))
+    0 (print-end)
     1 (play :ai (new-board))
-    2 (play :human (new-board))
-    0 (print-end)))
+    2 (play :human (new-board))))
+
 
 

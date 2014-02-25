@@ -41,7 +41,7 @@
   (it "prints the game"
     (should= "\nCurrent Player: X\n_|_|_\n_|_|_\n_|_|_\n\n"
       (with-out-str(with-in-str "current player")
-                                (print-game "A Message" '"X" '(nil nil nil nil nil nil nil nil nil))))))
+                                (print-game '"X" '(nil nil nil nil nil nil nil nil nil))))))
 
 (describe "print-tied-game"
   (it "displays tied game message"
@@ -66,7 +66,7 @@
 
 (describe "print-setup"
   (it "prints the setup"
-    (should= "\n\nWelcome to Tic Tac Toe!\n[0]\n[1]\n[2]\n"
+    (should= "\nWelcome to Tic Tac Toe!\n[1] 1 Player\n[2] 2 Players\n[0] Quit Game\n"
       (with-out-str (with-in-str "config")
                     (print-setup)))))
 
