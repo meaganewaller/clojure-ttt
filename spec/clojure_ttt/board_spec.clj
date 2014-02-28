@@ -25,4 +25,10 @@
               (should (winner? "X" '(nil nil nil "X" "X" "X" nil nil nil))))
           (it "returns false if the marker given isnt the winner"
               (should-not (winner? "O" '("X" nil nil nil "X" nil nil nil nil "X")))))
+
+(describe "full-board?"
+  (it "returns true if full"
+    (should (full-board? '("X" "X" "X" "X" "X" "X" "X" "X" "X"))))
+  (it "returns false if not"
+    (should-not (full-board? '("X" nil nil nil nil nil nil nil nil)))))
 (run-specs)

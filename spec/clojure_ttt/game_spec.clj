@@ -40,7 +40,9 @@
   (it "prints message for tie"
     (should= "Tied Game\nX|O|X\nO|X|O\nO|X|O\n"
       (with-out-str(with-in-str "end of game"
-                     (print-outcome '"X" ["X" "O" "X" "O" "X" "O" "O" "X" "O"])))))
+                     (print-outcome '"X" ["X" "O" "X"
+                                          "O" "X" "O"
+                                          "O" "X" "O"])))))
   (it "prints message for winner"
     (should= "O is the Winner\nO|O|O\n_|_|_\n_|_|_\n"
       (with-out-str(with-in-str "x winner"

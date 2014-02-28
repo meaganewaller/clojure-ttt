@@ -25,3 +25,5 @@
     (list marker)
     (nthnext board (inc space))))
 
+(defn full-board? [board]
+  (= 0 (count (available-spaces board))))

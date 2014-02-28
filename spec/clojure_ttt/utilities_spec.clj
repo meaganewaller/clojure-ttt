@@ -8,9 +8,17 @@
     (should= "X" (switch-player "O"))
     (should= "O" (switch-player "X"))))
 
+(describe "no-winner"
+  (it "returns true when no winner"
+    (should (no-winner [new-board])))
+  (it "returns false when winner"
+    (should-not (no-winner '("X" "X" "X"
+                                 nil nil nil
+                                 nil nil nil)))))
+
 (describe "tied?"
   (it "returns true if full board"
-    (should (tied? '("X" "O" "X"
+    (should (tied?     '("X" "O" "X"
                          "O" "X" "O"
                          "O" "X" "O"))))
   (it "returns false if board isnt full"
